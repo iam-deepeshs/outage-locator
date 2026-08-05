@@ -22,8 +22,8 @@ network + topology inference) -- no manual commands needed.
 
 ## Live deployment
 
-- **Frontend (open this one):** https://outage-locator-frontend.onrender.com
-- **Backend API:** https://outage-locator-backend.onrender.com
+- **Frontend (open this one):** https://outage-locator-frontend-4bna.onrender.com
+- **Backend API:** https://outage-locator-backend-3b6c.onrender.com/docs
 - Hosted on Render's free tier via `render.yaml` (Blueprint deploy: Postgres +
   Docker web service + static site, all from one file, no manual dashboard
   config beyond the initial connect).
