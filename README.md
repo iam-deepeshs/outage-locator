@@ -1,45 +1,136 @@
-# Outage Locator — KSPDB Fault Detection & Localization
+# ⚡ Outage Locator – Smart Fault Detection & Localization System
 
-A system that detects and localizes low-tension power faults from pole-level
-telemetry, for the (fictional) Karnataka State Power Distribution Board.
+A full-stack web application for detecting, localizing, and managing low-tension
+power outages using simulated pole-level telemetry for the fictional
+Karnataka State Power Distribution Board (KSPDB).
 
-**Status: work in progress.** Built incrementally against a 7-day take-home
-brief. See DECISIONS.md for what's done, what's stubbed, and what's cut.
+## 🚀 Features
 
-## What it does (target scope)
-- Ingests pole-liveness telemetry
-- Groups dark-pole signals into located, deduplicated fault incidents
-- Distinguishes real outages from dead sensors and scheduled load-shedding
-- Runs tickets through detected → acknowledged → crew assigned → resolved →
-  verified → closed, with telemetry-based auto-verification
-- Ships a fault simulator to drive the whole pipeline end-to-end
-- [AI feature — to be added]
+- Real-time outage detection from telemetry
+- Intelligent fault localization
+- Interactive network visualization
+- Incident & ticket management workflow
+- Scheduled outage suppression
+- Dead sensor detection
+- Synthetic network simulator
+- AI-powered dispatch summaries (with graceful fallback)
+- REST API with Swagger documentation
+- Dockerized deployment
+- Live deployment on Render
 
-## Quick start
-    git clone <repo-url>
-    cd outage-locator
-    docker compose up --build
+---
 
-Then:
-- Backend API: http://localhost:8000 (docs at /docs)
-- Frontend: http://localhost:5173
+## 🛠 Tech Stack
 
-Seed the synthetic network (until this is automated on startup):
-    docker compose exec backend python -m app.generate_data
-    docker compose exec backend python -m app.topology_inference
+### Frontend
+- React (Vite)
+- JavaScript
+- CSS
 
-## Live deployment
-Frontend (open this one): https://outage-locator-frontend.onrender.com
-Backend API: https://outage-locator-backend.onrender.com
+### Backend
+- FastAPI
+- Python
+- SQLAlchemy
+- Pydantic
 
-Note: free-tier backend sleeps after ~15 min idle; first request after
-that may take 30-60s to wake up. See DEPLOYMENT.md for details.
+### Database
+- PostgreSQL
 
-## Demo video
-[link -- added after recording]
+### Deployment
+- Docker
+- Docker Compose
+- Render
 
-## Documentation map
-- `ARCHITECTURE.md` — system design, data model, localization algorithm, API surface
-- `DEPLOYMENT.md` — environment variables, exact run commands, troubleshooting
-- `DECISIONS.md` — decision log, assumptions, what's cut
-- `AI-WORKFLOW.md` — how AI tools were used building this
+---
+
+## 📂 Project Structure
+
+```
+backend/
+frontend/
+docker-compose.yml
+render.yaml
+ARCHITECTURE.md
+DEPLOYMENT.md
+DECISIONS.md
+AI-WORKFLOW.md
+```
+
+---
+
+## ⚙️ Local Setup
+
+```bash
+git clone https://github.com/iam-deepeshs/outage-locator.git
+
+cd outage-locator
+
+docker compose up --build
+```
+
+Backend
+
+```
+http://localhost:8000
+```
+
+Swagger
+
+```
+http://localhost:8000/docs
+```
+
+Frontend
+
+```
+http://localhost:5173
+```
+
+---
+
+## 🌐 Live Deployment
+
+Frontend:
+https://outage-locator-frontend-4bna.onrender.com
+
+Backend API:
+https://outage-locator-backend-3b6c.onrender.com
+
+Swagger:
+https://outage-locator-backend-3b6c.onrender.com/docs
+
+
+## 📹 Demo Video
+
+(Add your YouTube link here)
+
+---
+
+## 📄 Documentation
+
+- ARCHITECTURE.md
+- DEPLOYMENT.md
+- DECISIONS.md
+- AI-WORKFLOW.md
+
+---
+
+## 📌 Current Status
+
+- ✅ Dockerized
+- ✅ PostgreSQL Integrated
+- ✅ Render Deployment
+- ✅ REST APIs
+- ✅ Interactive Dashboard
+- ✅ Fault Simulator
+- ✅ Ticket Lifecycle
+- ✅ AI Summary Integration
+
+---
+
+## 👨‍💻 Author
+
+Deepesh Srivastava
+
+GitHub:
+https://github.com/iam-deepeshs
